@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>NaifoLogic Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>📊 Menü</h2>
+    <ul>
+      <li><a href="dashboard.html">🏠 Anasayfa</a></li>
+      <li><a href="raporlar.html">📈 Raporlar</a></li>
+      <li><a href="kullanicilar.html">👤 Kullanıcılar</a></li>
+      <li><a href="karsilastirmalar.html">📊 Karşılaştırmalar</a></li>
+      <li><a href="login.html">🚪 Çıkış</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1>👋 Hoş geldin, Miraç Bey</h1>
+    <p>Bu panelde analiz, rapor ve kullanıcı bilgilerine ulaşabilirsiniz.</p>
+  </div>
+</body>
+</html>
