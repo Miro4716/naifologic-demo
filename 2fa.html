@@ -71,3 +71,18 @@
   </script>
 </body>
 </html>
+function girisYap() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  const code = document.getElementById("code").value;
+
+  const dogruKullanici = "naifo";
+  const dogruSifre = "010618";
+  const dogruKod = "984147"; // Bu 6 haneli doğrulama kodudur
+
+  if (user === dogruKullanici && pass === dogruSifre && code === dogruKod) {
+    window.location.href = "dashboard.html";
+  } else {
+    document.getElementById("mesaj").innerText = "Hatalı giriş bilgileri veya doğrulama kodu.";
+  }
+}
