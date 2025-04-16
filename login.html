@@ -5,16 +5,30 @@
   <meta charset="UTF-8">
   <title>NaifoLogic Giriş</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function girisYap(event) {
+      event.preventDefault();
+      var kullanici = document.getElementById("kullanici").value;
+      var sifre = document.getElementById("sifre").value;
+      var uyari = document.getElementById("uyari");
+
+      if (kullanici === "NaifoLogic" && sifre === "010618") {
+        window.location.href = "dashboard.html";
+      } else {
+        uyari.style.display = "block";
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="login-container">
     <h1>NaifoLogic Giriş</h1>
-    <form>
-      <input type="text" placeholder="Kullanıcı Adı" required>
-      <input type="password" placeholder="Şifre" required>
+    <form onsubmit="girisYap(event)">
+      <input type="text" id="kullanici" placeholder="Kullanıcı Adı" required>
+      <input type="password" id="sifre" placeholder="Şifre" required>
       <button type="submit">Giriş Yap</button>
     </form>
-    <p class="uyari" style="display:none;">Şifreni hatalı girdin, tekrar dene!</p>
+    <p id="uyari" class="uyari" style="display:none;">Şifreni hatalı girdin, tekrar dene!</p>
   </div>
   <div class="animasyon">Bugün “liderlik” • Yarın “vizyon” • Ertesi gün “sezgi”</div>
 </body>

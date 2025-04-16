@@ -6,7 +6,6 @@ body {
   background: url('bg.jpg') no-repeat center center fixed;
   background-size: cover;
 }
-
 .login-container {
   width: 350px;
   margin: 10% auto;
@@ -15,7 +14,6 @@ body {
   border-radius: 12px;
   text-align: center;
 }
-
 input, button {
   display: block;
   width: 90%;
@@ -24,14 +22,12 @@ input, button {
   border: none;
   border-radius: 5px;
 }
-
 button {
   background-color: #004aad;
   color: white;
   cursor: pointer;
   font-weight: bold;
 }
-
 .animasyon {
   position: fixed;
   bottom: 20px;
@@ -42,7 +38,6 @@ button {
   animation: fadeIn 3s infinite alternate;
   text-shadow: 0 0 6px #000;
 }
-
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
