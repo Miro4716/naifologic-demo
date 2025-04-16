@@ -1,1 +1,73 @@
-<!DOCTYPE html><html><head><title>2FA</title></head><body><h1>İki Aşamalı Doğrulama</h1></body></html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NaifoLogic Giriş</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: url('arkaplan-gorseli.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff00aa;
+      color: white;
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+    button {
+      background: #ff00aa;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .error {
+      color: #ff6666;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>NaifoLogic Giriş</h2>
+    <input type="text" id="username" placeholder="Kullanıcı Adı" />
+    <input type="password" id="password" placeholder="Şifre" />
+    <input type="text" id="code" placeholder="6 Haneli Kod" maxlength="6" />
+    <button onclick="girisYap()">Giriş Yap</button>
+    <div id="mesaj" class="error"></div>
+  </div>
+
+  <script>
+    function girisYap() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const code = document.getElementById("code").value;
+
+      if (user === "naifo" && pass === "010618" && code === "984147") {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("mesaj").innerText = "Hatalı giriş bilgileri. Lütfen tekrar deneyin.";
+      }
+    }
+  </script>
+</body>
+</html>
