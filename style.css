@@ -1,55 +1,41 @@
-
-body {
-  margin: 0;
-  padding: 0;
+.auth-body {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
   font-family: 'Segoe UI', sans-serif;
-  background: url('arka-plan.png') no-repeat center center fixed;
-  background-size: cover;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.login-container {
-  width: 350px;
-  margin: 10% auto;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
+
+.auth-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
   text-align: center;
-  box-shadow: 0 0 20px #ff00ff55;
+  width: 300px;
 }
-input, button {
-  display: block;
-  width: 90%;
-  margin: 10px auto;
+
+.auth-container input {
   padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
-input {
-  background: #f4f4f4;
-  color: #333;
-}
-button {
-  background-color: #ff0088;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-button:hover {
-  background-color: #ff66c4;
-  box-shadow: 0 0 10px #ff00ff;
-}
-.animasyon {
-  position: fixed;
-  bottom: 20px;
   width: 100%;
-  text-align: center;
-  color: #fff;
-  font-size: 18px;
-  animation: fadeIn 3s infinite alternate;
-  text-shadow: 0 0 8px #000;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
 }
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+
+.auth-container button {
+  background-color: #ff0080;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error-msg {
+  color: #ff4d4d;
+  font-size: 0.9em;
 }
