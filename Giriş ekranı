@@ -1,38 +1,92 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NaifoLogic Giriş</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Rubik', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #3f3f70);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+      width: 350px;
+      backdrop-filter: blur(12px);
+      color: white;
+    }
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      background-color: #fff;
+      font-size: 16px;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff007a;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+    .login-container button:hover {
+      background-color: #e6006e;
+    }
+    .warning {
+      text-align: center;
+      color: #ffc107;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="login-container">
-    <h2>🔐 NaifoLogic Giriş</h2>
-    <input type="text" id="username" placeholder="Kullanıcı Adı" />
-    <input type="password" id="password" placeholder="Şifre" />
-    <input type="text" id="code" placeholder="6 Haneli Doğrulama Kodu" maxlength="6" />
+    <h2>NaifoLogic Giriş</h2>
+    <input type="text" id="username" placeholder="Kullanıcı Adı">
+    <input type="password" id="password" placeholder="Şifre">
+    <input type="text" id="code" placeholder="6 Haneli Kod">
     <button onclick="girisYap()">Giriş Yap</button>
-    <p id="mesaj"></p>
+    <div class="warning" id="mesaj"></div>
   </div>
 
   <script>
     function girisYap() {
-      const user = document.getElementById("username").value.trim();
-      const pass = document.getElementById("password").value.trim();
-      const code = document.getElementById("code").value.trim();
-      const mesaj = document.getElementById("mesaj");
-
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const code = document.getElementById("code").value;
       const dogruKullanici = "naifo";
       const dogruSifre = "010618";
       const dogruKod = "984147";
 
       if (user === dogruKullanici && pass === dogruSifre && code === dogruKod) {
-        mesaj.innerText = "";
         window.location.href = "dashboard.html";
       } else {
-        mesaj.innerText = "❗ Hatalı kullanıcı adı, şifre veya doğrulama kodu.";
-        mesaj.style.color = "red";
+        document.getElementById("mesaj").innerText = "Hatalı bilgi! Lütfen tekrar deneyin.";
       }
     }
   </script>
