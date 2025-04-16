@@ -3,16 +3,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url('bg.jpg') no-repeat center center fixed;
+  background: url('arka-plan.png') no-repeat center center fixed;
   background-size: cover;
+  color: white;
 }
 .login-container {
   width: 350px;
   margin: 10% auto;
   padding: 20px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   text-align: center;
+  box-shadow: 0 0 20px #ff00ff55;
 }
 input, button {
   display: block;
@@ -22,21 +24,30 @@ input, button {
   border: none;
   border-radius: 5px;
 }
+input {
+  background: #f4f4f4;
+  color: #333;
+}
 button {
-  background-color: #004aad;
+  background-color: #ff0088;
   color: white;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background-color: #ff66c4;
+  box-shadow: 0 0 10px #ff00ff;
 }
 .animasyon {
   position: fixed;
   bottom: 20px;
   width: 100%;
   text-align: center;
-  color: white;
+  color: #fff;
   font-size: 18px;
   animation: fadeIn 3s infinite alternate;
-  text-shadow: 0 0 6px #000;
+  text-shadow: 0 0 8px #000;
 }
 @keyframes fadeIn {
   from {opacity: 0;}
