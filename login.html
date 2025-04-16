@@ -1,35 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
   <title>NaifoLogic Giriş</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-    function girisYap(event) {
-      event.preventDefault();
-      var kullanici = document.getElementById("kullanici").value;
-      var sifre = document.getElementById("sifre").value;
-      var uyari = document.getElementById("uyari");
+</head>
+<body>
+  <div class="auth-container">
+    <h2>NaifoLogic Giriş</h2>
+    <input type="text" id="username" placeholder="Kullanıcı Adı">
+    <input type="password" id="password" placeholder="Şifre">
+    <input type="text" id="code" placeholder="6 Haneli Kod">
+    <button onclick="girisYap()">Giriş Yap</button>
+    <p id="mesaj" class="error-msg"></p>
+  </div>
 
-      if (kullanici === "NaifoLogic" && sifre === "010618") {
+  <script>
+    function girisYap() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const code = document.getElementById("code").value;
+
+      const dogruKullanici = "naifo";
+      const dogruSifre = "010618";
+      const dogruKod = "984147"; // 2FA kodu
+
+      if (user === dogruKullanici && pass === dogruSifre && code === dogruKod) {
         window.location.href = "dashboard.html";
       } else {
-        uyari.style.display = "block";
+        document.getElementById("mesaj").innerText = "Hatalı giriş bilgileri veya doğrulama kodu.";
       }
     }
   </script>
-</head>
-<body>
-  <div class="login-container">
-    <h1>NaifoLogic Giriş</h1>
-    <form onsubmit="girisYap(event)">
-      <input type="text" id="kullanici" placeholder="Kullanıcı Adı" required>
-      <input type="password" id="sifre" placeholder="Şifre" required>
-      <button type="submit">Giriş Yap</button>
-    </form>
-    <p id="uyari" class="uyari" style="display:none;">Şifreni hatalı girdin, tekrar dene!</p>
-  </div>
-  <div class="animasyon">Bugün “liderlik” • Yarın “vizyon” • Ertesi gün “sezgi”</div>
 </body>
 </html>
