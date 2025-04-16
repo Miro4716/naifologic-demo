@@ -5,84 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NaifoLogic Giriş</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      background: url('arkaplan-gorseli.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .login-box {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #ff00aa;
-      color: white;
-      text-align: center;
-      width: 300px;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-    }
-    button {
-      background: #ff00aa;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .error {
-      color: #ff6666;
-      margin-top: 10px;
-    }
-  </style>
 </head>
 <body>
-  <div class="login-box">
-    <h2>NaifoLogic Giriş</h2>
+  <div class="login-container">
+    <h2>🔐 NaifoLogic Giriş</h2>
     <input type="text" id="username" placeholder="Kullanıcı Adı" />
     <input type="password" id="password" placeholder="Şifre" />
-    <input type="text" id="code" placeholder="6 Haneli Kod" maxlength="6" />
+    <input type="text" id="code" placeholder="6 Haneli Doğrulama Kodu" maxlength="6" />
     <button onclick="girisYap()">Giriş Yap</button>
-    <div id="mesaj" class="error"></div>
+    <p id="mesaj"></p>
   </div>
 
   <script>
     function girisYap() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-      const code = document.getElementById("code").value;
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const code = document.getElementById("code").value.trim();
+      const mesaj = document.getElementById("mesaj");
 
-      if (user === "naifo" && pass === "010618" && code === "984147") {
+      const dogruKullanici = "naifo";
+      const dogruSifre = "010618";
+      const dogruKod = "984147";
+
+      if (user === dogruKullanici && pass === dogruSifre && code === dogruKod) {
+        mesaj.innerText = "";
         window.location.href = "dashboard.html";
       } else {
-        document.getElementById("mesaj").innerText = "Hatalı giriş bilgileri. Lütfen tekrar deneyin.";
+        mesaj.innerText = "❗ Hatalı kullanıcı adı, şifre veya doğrulama kodu.";
+        mesaj.style.color = "red";
       }
     }
   </script>
 </body>
 </html>
-function girisYap() {
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
-  const code = document.getElementById("code").value;
-
-  const dogruKullanici = "naifo";
-  const dogruSifre = "010618";
-  const dogruKod = "984147"; // Bu 6 haneli doğrulama kodudur
-
-  if (user === dogruKullanici && pass === dogruSifre && code === dogruKod) {
-    window.location.href = "dashboard.html";
-  } else {
-    document.getElementById("mesaj").innerText = "Hatalı giriş bilgileri veya doğrulama kodu.";
-  }
-}
